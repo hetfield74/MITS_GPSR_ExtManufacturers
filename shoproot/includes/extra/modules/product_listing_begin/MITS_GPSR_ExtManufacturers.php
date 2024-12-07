@@ -98,7 +98,7 @@ if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMAN
                     $mits_gpsr_text .= '<div class="gspr-address-row">' . $manufacturer['mits_gpsr_manufacturer_country'] . '</div>';
                 }
                 if (!empty($manufacturer['mits_gpsr_manufacturer_homepage'])) {
-                    $mits_gpsr_text .= '<div class="mits_gpsr_manufacturer_homepage">' . MITS_GSPR_HOMEPAGE . $manufacturer['mits_gpsr_manufacturer_homepage'] . '</div>';
+                    $mits_gpsr_text .= '<div class="gspr-address-row">' . MITS_GSPR_HOMEPAGE . $manufacturer['mits_gpsr_manufacturer_homepage'] . '</div>';
                 }
                 if (!empty($manufacturer['mits_gpsr_manufacturer_email'])) {
                     $mits_gpsr_text .= '<div class="gspr-address-row">' . MITS_GSPR_MAIL . $manufacturer['mits_gpsr_manufacturer_email'] . '</div>';
@@ -145,7 +145,7 @@ if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMAN
                     $mits_gpsr_text .= '<div class="gspr-address-row">' . $manufacturer['mits_gpsr_responsibleperson_country'] . '</div>';
                 }
                 if (!empty($manufacturer['mits_gpsr_responsibleperson_homepage'])) {
-                    $mits_gpsr_text .= '<div class="mits_gpsr_manufacturer_homepage">' . MITS_GSPR_HOMEPAGE . $manufacturer['mits_gpsr_responsibleperson_homepage'] . '</div>';
+                    $mits_gpsr_text .= '<div class="gspr-address-row">' . MITS_GSPR_HOMEPAGE . $manufacturer['mits_gpsr_responsibleperson_homepage'] . '</div>';
                 }
                 if (!empty($manufacturer['mits_gpsr_responsibleperson_email'])) {
                     $mits_gpsr_text .= '<div class="gspr-address-row">' . MITS_GSPR_MAIL . $manufacturer['mits_gpsr_responsibleperson_email'] . '</div>';
