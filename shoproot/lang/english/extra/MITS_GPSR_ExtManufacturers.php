@@ -21,6 +21,7 @@ $lang_array = array(
   'MITS_GSPR_FAX' => 'Fax: ',
   'MITS_GSPR_MAIL' => 'E-Mail-Adresse: ',
   'MITS_GSPR_HOMEPAGE' => 'Webseite: ',
+  'MITS_GSPR_PRODSG' => 'Produktsicherheit',
 );
 
 foreach ($lang_array as $key => $val) {

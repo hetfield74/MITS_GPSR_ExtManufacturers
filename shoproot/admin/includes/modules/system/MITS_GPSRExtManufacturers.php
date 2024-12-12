@@ -28,7 +28,7 @@ class MITS_GPSRExtManufacturers {
     function __construct() {
         $this->code = 'MITS_GPSRExtManufacturers';
         $this->name = 'MODULE_' . strtoupper($this->code);
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->title = defined($this->name . '_TITLE') ? constant($this->name . '_TITLE') . ' - v' . $this->version : $this->code . ' - v' . $this->version;
         $this->description = defined($this->name . '_DESCRIPTION') ? constant($this->name . '_DESCRIPTION') : '';
         $this->enabled = defined($this->name . '_STATUS') && constant($this->name . '_STATUS') == 'true';
@@ -39,6 +39,19 @@ class MITS_GPSRExtManufacturers {
             xtc_db_query("UPDATE " . TABLE_CONFIGURATION . " SET configuration_value = '" . $this->version . "' WHERE configuration_key = '" . $this->name . "_VERSION'");
         } elseif (defined($this->name . '_STATUS')) {
             xtc_db_query("INSERT INTO " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) VALUES ('" . $this->name . "_VERSION', '" . $this->version . "', 6, 99, NULL, now())");
+        }
+
+        if (defined($this->name . '_STATUS')) {
+            $check_prodsg_field = false;
+            $check_prodsg_field_rows = xtc_db_query('DESCRIBE ' . TABLE_PRODUCTS_DESCRIPTION);
+            while ($check_prodsg_field_row = xtc_db_fetch_array($check_prodsg_field_rows)) {
+                if ($check_prodsg_field_row['Field'] == 'products_prodsg_info') {
+                    $check_prodsg_field = true;
+                }
+            }
+            if ($check_prodsg_field === false) {
+                xtc_db_query("ALTER TABLE " . TABLE_PRODUCTS_DESCRIPTION . " ADD COLUMN `products_prodsg_info` TEXT NULL");
+            }
         }
     }
 
@@ -69,6 +82,7 @@ class MITS_GPSRExtManufacturers {
         foreach($valid_params as $param) {
             xtc_db_query("ALTER TABLE " . TABLE_MANUFACTURERS . " ADD " . $param . " VARCHAR(255) NULL");
         }
+        xtc_db_query("ALTER TABLE " . TABLE_PRODUCTS_DESCRIPTION . " ADD COLUMN `products_prodsg_info` TEXT NULL");
 
         xtc_db_query("INSERT INTO " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) VALUES ('" . $this->name . "_STATUS', 'true', 6, 1, 'xtc_cfg_select_option(array(\'true\', \'false\'), ', now())");
         xtc_db_query("INSERT INTO " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) VALUES ('" . $this->name . "_APPENDTO_ADD_DESC', 'true', 6, 3, 'xtc_cfg_select_option(array(\'true\', \'false\'), ', now())");
@@ -81,6 +95,7 @@ class MITS_GPSRExtManufacturers {
         foreach($valid_params as $param) {
             xtc_db_query("ALTER TABLE " . TABLE_MANUFACTURERS . " DROP " . $param);
         }
+        xtc_db_query("ALTER TABLE " . TABLE_PRODUCTS_DESCRIPTION . " DROP `products_prodsg_info`");
 
         xtc_db_query("DELETE FROM " . TABLE_CONFIGURATION . " WHERE configuration_key in ('" . implode("', '", $this->keys()) . "')");
         xtc_db_query("DELETE FROM " . TABLE_CONFIGURATION . " WHERE configuration_key LIKE '" . $this->name . "_%'");

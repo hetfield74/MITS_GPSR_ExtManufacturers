@@ -46,6 +46,7 @@ $lang_array = array(
   'mits_gpsr_responsibleperson_phone_number_1' => 'Telefonnummer',
   'mits_gpsr_responsibleperson_phone_number_2' => 'Telefonnummer 2',
   'mits_gpsr_responsibleperson_fax_number' => 'Fax',
+  'mits_gpsr_product_security' => 'Produktsicherheit',
 );
 
 foreach ($lang_array as $key => $val) {

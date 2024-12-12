@@ -49,6 +49,10 @@ if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMAN
         $info_smarty->assign(strtoupper($param), isset($manufacturer[$param]) && !empty($manufacturer[$param]) ? $manufacturer[$param] : '');
     }
 
+    if (isset($product->data['products_prodsg_info']) && !empty($product->data['products_prodsg_info'])) {
+        $info_smarty->assign('PRODUCTS_PRODSG_INFO', $product->data['products_prodsg_info']);
+    }
+
     if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_ADD_DESC') && MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_ADD_DESC == 'true'
       && (
         !empty($manufacturer['mits_gpsr_manufacturer_name'])
