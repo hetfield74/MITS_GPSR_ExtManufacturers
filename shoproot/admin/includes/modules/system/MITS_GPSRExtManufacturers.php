@@ -31,7 +31,7 @@ class MITS_GPSRExtManufacturers {
         $this->version = '1.0.2';
 
         $valid_params = $this->get_validparams();
-        $paramlist = '<ul>';
+        $paramlist = '<ul><li>{$MANUFACTURERS_ADD_DESCRIPTION}</li>';
         foreach($valid_params as $param) {
             $paramlist .= '<li>{$' . strtoupper($param) . '}</li>';
         }
