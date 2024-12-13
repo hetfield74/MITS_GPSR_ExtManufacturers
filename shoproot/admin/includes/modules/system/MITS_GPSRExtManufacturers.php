@@ -28,9 +28,17 @@ class MITS_GPSRExtManufacturers {
     function __construct() {
         $this->code = 'MITS_GPSRExtManufacturers';
         $this->name = 'MODULE_' . strtoupper($this->code);
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
+
+        $valid_params = $this->get_validparams();
+        $paramlist = '<ul>';
+        foreach($valid_params as $param) {
+            $paramlist .= '<li>{$' . strtoupper($param) . '}</li>';
+        }
+        $paramlist .= '</ul>';
+
         $this->title = defined($this->name . '_TITLE') ? constant($this->name . '_TITLE') . ' - v' . $this->version : $this->code . ' - v' . $this->version;
-        $this->description = defined($this->name . '_DESCRIPTION') ? constant($this->name . '_DESCRIPTION') : '';
+        $this->description = defined($this->name . '_DESCRIPTION') ? constant($this->name . '_DESCRIPTION') . $paramlist : '';
         $this->enabled = defined($this->name . '_STATUS') && constant($this->name . '_STATUS') == 'true';
         $this->sort_order = defined($this->name . '_SORT_ORDER') ? constant($this->name . '_SORT_ORDER') : '';
 

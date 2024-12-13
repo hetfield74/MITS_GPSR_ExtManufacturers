@@ -46,7 +46,12 @@ Die Installation des Modul **MITS GPSR ExtManufacturers** ist ziemlich einfach.
        
 6. Konfigurieren sie nun das Modul nach ihren Wünschen. Die verschiedenen Einstellmöglichkeiten sind im Modul erklärt.
 
-7. Fertig!
+7. Die Templatevorlagen für die Artikeldetailansicht *( Im Ordner shoproot/templates/CURRENT_TEMPLATE/module/product_info)* müssen über die Smarty-Variable 
+   *{$MANUFACTURERS_ADD_DESCRIPTION}* 
+   verfügen, die mit der Version 3.1.0 in das Shopsystem integriert wurde. 
+   Sollte das verwendete Template nicht über diese Smarty-Variable verfügen, dann muss das Template entsprechend angepasst werden.
+
+8. Fertig!
 
 <hr />
 

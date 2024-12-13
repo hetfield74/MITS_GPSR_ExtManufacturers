@@ -25,11 +25,12 @@ $lang_array = array(
         </div>
         <p>Bei Fragen, Problemen oder W&uuml;nschen zu diesem Modul oder auch zu anderen Anliegen rund um die modified eCommerce Shopsoftware nehmen Sie einfach Kontakt zu uns auf:</p> 
         <div style="text-align:center;"><a style="background:#6a9;color:#444" target="_blank" href="https://www.merz-it-service.de/Kontakt.html" class="button" onclick="this.blur();">Kontaktseite auf MerZ-IT-SerVice.de</strong></a></div>
+        <p><strong>Verf&uuml;gbare Smarty-Variablen f&uuml;r die Artikeldetailansicht:</strong></p>
     ',
     'MODULE_MITS_GPSREXTMANUFACTURERS_STATUS_TITLE' => 'Status',
     'MODULE_MITS_GPSREXTMANUFACTURERS_STATUS_DESC' => 'Modul aktivieren',
     'MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_ADD_DESC_TITLE' => 'Notwendigen Herstellerangaben erweitern?',
-    'MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_ADD_DESC_DESC' => 'Geben Sie hier bitte an, ob die zus&auml;tzlichen Angaben dieses Moduls im Frontend in die "Notwendigen Herstellerangaben" bei der Artikelbeschreibung integriert werden sollen.',
+    'MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_ADD_DESC_DESC' => 'Geben Sie hier bitte an, ob die zus&auml;tzlichen Angaben dieses Moduls im Frontend in die "Notwendigen Herstellerangaben" bei der Artikelbeschreibung integriert werden sollen. ' . draw_tooltip('Die Templatevorlagen f&uuml;r die Artikeldetailansicht (im Ordner shoproot/templates/CURRENT_TEMPLATE/module/product_info) m&uuml;ssen &uuml;ber die Smarty-Variable {$MANUFACTURERS_ADD_DESCRIPTION} verf&uuml;gen, die mit der Version 3.1.0 in das Shopsystem integriert wurde. Sollte das verwendete Template nicht &uuml;ber diese Smarty-Variable verf&uuml;gen, dann muss das Template entsprechend angepasst werden.'),
     'MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_LISTING_DESC_TITLE' => 'Herstellerbeschreibung in Listing erweitern?',
     'MODULE_MITS_GPSREXTMANUFACTURERS_APPENDTO_LISTING_DESC_DESC' => 'Geben Sie hier bitte an, ob die zus&auml;tzlichen Angaben dieses Moduls im Frontend in die Herstellerbeschreibung im Product Listing integriert werden sollen.',
 );
