@@ -28,7 +28,7 @@ class MITS_GPSRExtManufacturers {
     function __construct() {
         $this->code = 'MITS_GPSRExtManufacturers';
         $this->name = 'MODULE_' . strtoupper($this->code);
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
 
         $valid_params = $this->get_validparams();
         $paramlist = '<ul><li>{$MANUFACTURERS_ADD_DESCRIPTION}</li>';
