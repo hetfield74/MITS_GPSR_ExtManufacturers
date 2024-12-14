@@ -12,11 +12,20 @@
  * --------------------------------------------------------------
  */
 
-if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMANUFACTURERS_STATUS == 'true') {
-    switch ($type) {
-        case 'products_prodsg_info':
-            $editorName = 'products_prodsg_info_' . $language_id;
-            $default_editor_height = 200;
-            break;
+if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMANUFACTURERS_STATUS == 'true' && isset($type)) {
+    if (isset($langID)) {
+        switch ($type) {
+            case 'products_prodsg_info':
+                $editorName = 'products_prodsg_info[' . $langID . ']';
+                $default_editor_height = 200;
+                break;
+        }
+    } elseif (isset($language_id)) {
+        switch ($type) {
+            case 'products_prodsg_info':
+                $editorName = 'products_prodsg_info_' . $language_id;
+                $default_editor_height = 200;
+                break;
+        }
     }
 }

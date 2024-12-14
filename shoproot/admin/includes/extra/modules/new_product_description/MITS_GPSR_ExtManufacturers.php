@@ -20,7 +20,7 @@ if (defined('MODULE_MITS_GPSREXTMANUFACTURERS_STATUS') && MODULE_MITS_GPSREXTMAN
     }
     echo xtc_wysiwyg('products_prodsg_info', $data['code'], $languages[$i]['id']);
     ?>
-    <div class="main" style="padding: 3px; line-height:20px;">
+    <div id="mits_prodsg_info" class="main" style="padding: 3px; line-height:20px;">
         <b><?php
             echo $lng_image . '&nbsp;' . constant('MITS_GPSR_PRODUCT_SECURITY_TITLE'); ?></b><br />
         <?php
